@@ -9,13 +9,13 @@ public class GuessTheNumber {
         Scanner scanner = new Scanner(System.in);
         int randomNumber = new Random().nextInt(100) + 1;
 
-        System.out.println("Choose a number between 1 and 100, ");
-        System.out.println("you will have 6 attempts to guess the number.");
+        System.out.println("I'm thinking of a number between 1 and 100, ");
+        System.out.println("You have 6 attempts to guess the number.");
 
 
         int guessAttempts = 6;
 
-        for (int i = 0; i < guessAttempts; i++) { //create a loop to iterate through the number of guesses allowed
+        for (int i = 0; i <= guessAttempts; i++) { //create a loop to iterate through the number of guesses allowed
             System.out.println("Guess the number:");
             int guess = Integer.parseInt(scanner.nextLine());
             if (randomNumber == guess) {
@@ -23,11 +23,13 @@ public class GuessTheNumber {
                 System.exit(0);
             } else if ((randomNumber > guess) && i != guessAttempts - 1) {
                 System.out.println("The number is greater than " + guess + "." + " You have " + (guessAttempts - 1) + " left.");
+                guessAttempts--;
             } else if (randomNumber < guess && i != guessAttempts - 1) {
-                System.out.println("The number is less than " + guess + "." + " You have " + (guessAttempts - 2) + " left.");
+                System.out.println("The number is less than " + guess + "." + " You have " + (guessAttempts - 1) + " left.");
+                guessAttempts--;
             }
         }
-        if (guessAttempts == guessAttempts) {
+        if (guessAttempts == 6) {
             System.out.println("You have exhausted " + guessAttempts + " attempts.");
             System.out.println("The correct number was: " + randomNumber);
         }
