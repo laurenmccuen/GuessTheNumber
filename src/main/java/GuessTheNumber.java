@@ -22,9 +22,9 @@ public class GuessTheNumber {
                 System.out.println("Congratulations! You guessed the number.");
                 System.exit(0);
             } else if ((randomNumber > guess) && guessAttempts != guessAttempts - 1) {
-                System.out.println("The number is greater than " + guess + "." + " You have " + (guessAttempts - 1) + " left.");
+                System.out.println("The number is greater than " + guess + "." + " You have " + (guessAttempts) + " left.");
             } else if (randomNumber < guess && guessAttempts != guessAttempts - 1) {
-                System.out.println("The number is less than " + guess + "." + " You have " + (guessAttempts - 1) + " left.");
+                System.out.println("The number is less than " + guess + "." + " You have " + (guessAttempts) + " left.");
             }
         }
         if (guessAttempts == guessAttempts) {
