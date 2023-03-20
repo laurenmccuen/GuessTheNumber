@@ -15,22 +15,20 @@ public class GuessTheNumber {
 
         int guessAttempts = 6;
 
-        for (int i = 0; i <= guessAttempts; i++) { //create a loop to iterate through the number of guesses allowed
+        for (guessAttempts = 6; 0 < guessAttempts; guessAttempts--) { //create a loop to iterate through the number of guesses allowed
             System.out.println("Guess the number:");
             int guess = Integer.parseInt(scanner.nextLine());
             if (randomNumber == guess) {
                 System.out.println("Congratulations! You guessed the number.");
                 System.exit(0);
-            } else if ((randomNumber > guess) && i != guessAttempts - 1) {
+            } else if ((randomNumber > guess) && guessAttempts != guessAttempts - 1) {
                 System.out.println("The number is greater than " + guess + "." + " You have " + (guessAttempts - 1) + " left.");
-                guessAttempts--;
-            } else if (randomNumber < guess && i != guessAttempts - 1) {
+            } else if (randomNumber < guess && guessAttempts != guessAttempts - 1) {
                 System.out.println("The number is less than " + guess + "." + " You have " + (guessAttempts - 1) + " left.");
-                guessAttempts--;
             }
         }
-        if (guessAttempts == 6) {
-            System.out.println("You have exhausted " + guessAttempts + " attempts.");
+        if (guessAttempts == guessAttempts) {
+            System.out.println("You have exhausted " + 6 + " attempts.");
             System.out.println("The correct number was: " + randomNumber);
         }
 
